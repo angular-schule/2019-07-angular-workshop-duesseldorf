@@ -17,4 +17,24 @@ export class CreateBookComponent {
     description: new FormControl('')
   });
 
+  isInvalid(name: string) {
+    const control = this.booksForm.get(name);
+    return control.dirty && control.invalid;
+  }
+
+  submitForm() {
+    const newBook = {
+      ...this.booksForm.value,
+      rating: 1
+    };
+
+    // Hands On:
+    // 1. erstelle eine Ereignis mit dem Namen "createBook"
+    // 2. löses dieses aus, mit dem neuen Buch
+    // 3. aboniere dich auf das Ereignis im Dashboard
+    // 4. füge das Buch dem Array hinzu
+
+    this.booksForm.reset();
+  }
+
 }

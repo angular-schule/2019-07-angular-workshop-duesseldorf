@@ -1,11 +1,11 @@
-<form [formGroup]="booksForm">
+<form [formGroup]="booksForm" (ngSubmit)="submitForm()">
 
   <div class="form-group">
     <label for="isbn">ISBN</label>
     <input formControlName="isbn" type="text" class="form-control" id="isbn">
   </div>
 
-  <div class="feedback-red" *ngIf="false">
+  <div class="feedback-red" *ngIf="isInvalid('isbn')">
     Please enter a valid ISBN!
   </div>
 
@@ -20,7 +20,9 @@
   </div>
 
   <div class="form-group">
-    <button type="submit" class="btn btn-primary">Create</button>
+    <button
+      [disabled]="booksForm.invalid"
+      type="submit" class="btn btn-primary">Create</button>
   </div>
 
 </form>
