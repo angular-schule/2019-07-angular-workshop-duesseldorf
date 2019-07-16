@@ -6,15 +6,20 @@ import { Book } from './book';
 })
 export class BookRatingService {
 
-  constructor() { }
+  readonly minRating = 1;
+  readonly maxRating = 5;
 
   rateUp(book: Book) {
-    // TODO: Kopie erstellen
-    return book;
+    return {
+      ...book,
+      rating: book.rating < this.maxRating ? book.rating + 1 : this.maxRating
+    };
   }
 
   rateDown(book: Book) {
-    // TODO: Kopie erstellen
-    return book;
+    return {
+      ...book,
+      rating: Math.max(book.rating - 1, this.minRating)
+    };
   }
 }
