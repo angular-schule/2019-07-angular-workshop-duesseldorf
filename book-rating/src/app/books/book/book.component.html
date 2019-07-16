@@ -11,5 +11,8 @@
       </h2>
     </div>
     <p>{{ book.description }}</p>
+
+    <button (click)="doRateDown()" class="btn btn-secondary mr-2">-1</button>
+    <button (click)="doRateUp()" class="btn btn-primary">+1</button>
   </div>
 </div>

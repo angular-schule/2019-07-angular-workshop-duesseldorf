@@ -2,7 +2,11 @@
   *ngFor="let b of books; odd as o"
   [ngClass]="{ grayBg: !o }">
 
-  <br-book [book]="b"></br-book>
+  <br-book
+    [book]="b"
+    (rateDown)="doRateDown($event)"
+    (rateUp)="doRateUp($event)"
+  ></br-book>
 </div>
 
 Anzahl der Bücher: {{ books.length }}
