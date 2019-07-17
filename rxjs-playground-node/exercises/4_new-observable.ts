@@ -3,7 +3,14 @@ import { Observable } from 'rxjs';
 /*************************************/
 
 // TODO
-const myObservable$ = { subscribe: (o: any) => { } } // ...  real observable here
+const myObservable$ = new Observable<string>(subscriber => {
+  subscriber.next('🤪');
+  subscriber.next('😳');
+
+  setTimeout(() => subscriber.error('🤬'), 3000)
+
+  setTimeout(() => subscriber.next('😳'), 1000)
+});
 
 /*************************************/
 
