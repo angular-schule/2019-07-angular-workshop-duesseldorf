@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, mergeMap } from 'rxjs/operators';
+import { map, mergeMap, switchMap } from 'rxjs/operators';
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
 
@@ -22,7 +22,7 @@ export class BookDetailsComponent implements OnInit {
     this.route.paramMap
       .pipe(
         map(p => p.get('isbn')),
-        mergeMap(isbn => this.bs.getSingle(isbn))
+        switchMap(isbn => this.bs.getSingle(isbn))
       )
       .subscribe(book => this.book = book);
   }
