@@ -20,8 +20,9 @@ Sofern du einen Account bei Gitlab, Github oder Twitter hast, kannst du dich üb
 # 🎮 Playgrounds
 
 Du kannst dir entweder  
-* das Repo per git herunterladen und die Ordner `rxjs-playground-node` sowie `rxjs-playground-exercises` erforschen<br><br>**oder**<br><br>  
-* die beiden Ordner als ZIP-Datei herunterladen: [rxjs-playground-node.zip](https://github.com/angular-schule/2019-07-angular-workshop-duesseldorf/files/3398602/rxjs-playground-node.zip) sowie [rxjs-playground-exercises.zip](https://github.com/angular-schule/2019-07-angular-workshop-duesseldorf/files/3398624/rxjs-playground-exercises.zip)
+* das Repo per git herunterladen und die Ordner `rxjs-playground-node`, `rxjs-playground-exercises` sowie `responsive-layout-playground` erforschen<br><br>**oder**<br><br>  
+* die drei Ordner als ZIP-Datei herunterladen: [rxjs-playground-node.zip](https://github.com/angular-schule/2019-07-angular-workshop-duesseldorf/files/3398602/rxjs-playground-node.zip), [rxjs-playground-exercises.zip](https://github.com/angular-schule/2019-07-angular-workshop-duesseldorf/files/3398624/rxjs-playground-exercises.zip) sowie [responsive-layout-playground.zip](https://github.com/angular-schule/2019-07-angular-workshop-duesseldorf/files/3403963/responsive-layout-playground.zip)
+
 
 
 # ✅ Vorbereitung
