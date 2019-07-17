@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { Book } from '../shared/book';
 import { BookRatingService } from '../shared/book-rating.service';
 import { BookStoreService } from '../shared/book-store.service';
@@ -7,16 +7,22 @@ import { BookStoreService } from '../shared/book-store.service';
   selector: 'br-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush // VORSICHT: bug bei AJAX!
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent implements OnInit {
 
   books: Book[] = [];
 
-  constructor(private br: BookRatingService, private bs: BookStoreService) { }
+  constructor(
+    private br: BookRatingService,
+    private bs: BookStoreService,
+    private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
-    this.bs.getAll().subscribe(books => this.books = books);
+    this.bs.getAll().subscribe(books => {
+      this.books = books;
+      this.cd.markForCheck();
+    });
   }
 
   doRateDown(book: Book) {
