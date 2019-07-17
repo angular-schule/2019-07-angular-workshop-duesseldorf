@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, mergeMap, switchMap, catchError, share } from 'rxjs/operators';
+import { map, mergeMap, switchMap, catchError, share, shareReplay } from 'rxjs/operators';
 import { BookStoreService } from '../shared/book-store.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { of } from 'rxjs';
@@ -25,7 +25,7 @@ export class BookDetailsComponent {
           rating: 1,
           firstThumbnailUrl: ''
         })))),
-      share()
+      shareReplay(1)
     );
 
   constructor(
