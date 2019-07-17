@@ -1,0 +1,27 @@
+<p>
+  <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS Grid Layout</a>
+  is the most powerful layout system available in CSS.<br>
+  While FlexBox CSS allows developers to create 1-dimensional layouts (with support for nested 1-dimensional layouts),
+  CSS Grid supports 2-dimensional layouts analogous to tables.<br>
+  Browser support is excellent, too – <a href="https://caniuse.com/#feat=css-grid">except for IE11</a>!
+</p>
+
+<p>
+  <code>@angular/flex-layout</code> provides
+  <a href="https://github.com/angular/flex-layout/blob/master/guides/Grid.md">some directives</a> on top of CSS grid.<br>
+  Please have a look at the given example and specifiy your layout for the <code>sm</code> and <code>xs</code> screen size!
+</p>
+
+<main
+  gdAreas   ="card1 card1 card1 card1   card2 card3 card4 card4 | card5 card5 card5 card5   card6 card6 card7 card7"
+  gdAreas.md="card1 card1 card1 card1 | card2 card2 card3 card3 | card4 card5 card6 card6 | card7 card7 card7 card7"
+  gdGap="16px"
+  gdRows="auto auto auto">
+  <app-card number="1" gdArea="card1"></app-card>
+  <app-card number="2" gdArea="card2"></app-card>
+  <app-card number="3" gdArea="card3"></app-card>
+  <app-card number="4" gdArea="card4"></app-card>
+  <app-card number="5" gdArea="card5"></app-card>
+  <app-card number="6" gdArea="card6"></app-card>
+  <app-card number="7" gdArea="card7"></app-card>
+</main>

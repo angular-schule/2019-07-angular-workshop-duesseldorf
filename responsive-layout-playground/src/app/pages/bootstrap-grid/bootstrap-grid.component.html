@@ -1,0 +1,24 @@
+<p>
+  The easiest solution is based on the Bootstrap Grid, which relies on Flexbox.
+  You define rows which are wrappers for columns.
+  Every row has exectly <strong>twelve columns</strong>.
+  Every item in a row can span one ore more columns.
+  If you take up too much space, the items will simply wrap as usual with Flexbox.
+  That's it.
+</p>
+<p>
+  In this example every items spans 12 columns. See what happens when you add <code>col-md-3</code> to every item.
+</p>
+
+<div class="container">
+  <div class="row">
+    <app-card number="1" class="col-12 mt-4"></app-card>
+    <app-card number="2" class="col-12 mt-4"></app-card>
+    <app-card number="3" class="col-12 mt-4"></app-card>
+    <app-card number="4" class="col-12 mt-4"></app-card>
+    <app-card number="5" class="col-12 mt-4"></app-card>
+    <app-card number="6" class="col-12 mt-4"></app-card>
+    <app-card number="7" class="col-12 mt-4"></app-card>
+  </div>
+</div>
+

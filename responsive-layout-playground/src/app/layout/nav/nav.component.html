@@ -1,0 +1,36 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <a routerLink="/">
+      <mat-toolbar>Menu</mat-toolbar>
+    </a>
+    <mat-nav-list >
+      <a mat-list-item routerLink="/flex-cheat-sheet" routerLinkActive="active-link">Flex Cheat Sheet</a>
+      <a mat-list-item routerLink="/media-queries" routerLinkActive="active-link">1. Media Queries</a>
+      <a mat-list-item routerLink="/breakpoint-observer" routerLinkActive="active-link">2. BreakpointObserver</a>
+      <a mat-list-item routerLink="/angular-flex-layout" routerLinkActive="active-link">3. @angular/flex-layout</a>
+      <a mat-list-item routerLink="/bootstrap-grid" routerLinkActive="active-link">4. Bootstrap Grid</a>
+      <a mat-list-item routerLink="/angular-flex-layout-grid" routerLinkActive="active-link">5. Grid via @angular/flex-layout</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>responsive-layout-playground</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div class="m-4">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

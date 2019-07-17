@@ -1,0 +1,97 @@
+h4 {
+  margin-top: 16px;
+}
+input {
+  margin-right: 4px;
+}
+label{
+  margin-right: 16px;
+}
+
+p{
+  color: darkblue;
+  margin: 15px 0 3px 0;
+  font-weight: bold;
+
+}
+.box{
+  margin: 20px 0;
+  padding: 10px;
+  width: 400px;
+  height:250px;
+  background: #e4e4e4;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  transition: all 1s easy;
+
+  .item{
+    margin: 3px;
+    padding: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #efefef;
+
+    &.item1{
+      background: #33c9ea;
+    }
+    &.item2{
+      background: #33ddea;
+    }
+    &.item3{
+      background: #33eadd;
+    }
+    &.item4{
+      background: #33eac2;
+    }
+    &.item5{
+      background: #33ea8e;
+    }
+  }
+}
+
+#row:checked ~ .box{
+  flex-direction: row;
+}
+#row-rev:checked ~ .box{
+  flex-direction: row-reverse;
+}
+#column:checked ~ .box{
+  flex-direction: column;
+}
+#column-rev:checked ~ .box{
+  flex-direction: column-reverse;
+}
+
+#justify-spacearound:checked ~ .box{
+  justify-content: space-around;
+}
+#justify-spacebetween:checked ~ .box{
+  justify-content: space-between;
+}
+#justify-flexend:checked ~ .box{
+  justify-content: flex-end;
+}
+#justify-center:checked ~ .box{
+  justify-content: center;
+}
+#justify-flexstart:checked ~ .box{
+  justify-content: flex-start;
+}
+
+#align-stretch:checked ~ .box{
+  align-items: stretch;
+}
+#align-flexstart:checked ~ .box{
+  align-items: flex-start;
+}
+#align-flexend:checked ~ .box{
+  align-items: flex-end;
+}
+#align-center:checked ~ .box{
+  align-items: center;
+}

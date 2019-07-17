@@ -1,0 +1,33 @@
+<p>
+  <code>BreakpointObserver</code> is a service with two methods:
+  <code>isMatched()</code> (a simple method) and <code>observe()</code>.<br>
+  The <code>observe()</code> method returns an Observable of type <code>BreakpointState</code>
+  and can be used to observe when the viewport changes between matching a media query or not.<br>
+  The built-in breakpoints are based on
+  <a href="https://material.io/design/layout/responsive-layout-grid.html#breakpoints">Google's Material Design</a> specification.
+  <!-- The available values are:
+  Handset,
+  Tablet,
+  Web,
+  HandsetPortrait,
+  TabletPortrait,
+  WebPortrait,
+  HandsetLandscape,
+  TabletLandscape,
+  WebLandscape -->
+</p>
+
+<p>
+  Use an observable to make the first card 2x wider if we have a screen in handset size!<br>
+  You can use the CSS class <code>big-card</code>.
+</p>
+
+<main class="cards-bo">
+  <app-card number="1"></app-card>
+  <app-card number="2"></app-card>
+  <app-card number="3"></app-card>
+  <app-card number="4"></app-card>
+  <app-card number="5"></app-card>
+  <app-card number="6"></app-card>
+</main>
+

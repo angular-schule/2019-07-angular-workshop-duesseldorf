@@ -1,0 +1,15 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+app-card {
+  flex: 0 0 200px;
+  margin: 10px;
+}
+
+// if the browser window is 960px or smaller
+@media only screen and (max-width: 960px) {
+
+}

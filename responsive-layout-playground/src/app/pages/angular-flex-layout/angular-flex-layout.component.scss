@@ -1,0 +1,16 @@
+.cards-ngf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+
+  app-card {
+    flex: 0 0 200px;
+    margin: 10px;
+  }
+
+  .big-card {
+    flex: 2 0 200px;
+  }
+}
+
+
