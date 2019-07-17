@@ -1,6 +1,13 @@
 <h1>#{{ (book$ | async)?.title }}</h1>
 
-<p>{{ (book$ | async)?.description }}</p>
+<p *ngIf="showDetails">
+  Here we should see details:
+  {{ (book$ | async)?.description }}
+</p>
+
+<button (click)="showDetails = true">
+  Show showDetails
+</button>
 
 <a routerLink="/book/9783864902079">
   Got to next Book

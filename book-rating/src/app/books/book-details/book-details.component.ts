@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, mergeMap, switchMap, catchError } from 'rxjs/operators';
+import { map, mergeMap, switchMap, catchError, share } from 'rxjs/operators';
 import { BookStoreService } from '../shared/book-store.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { of } from 'rxjs';
@@ -12,6 +12,8 @@ import { of } from 'rxjs';
 })
 export class BookDetailsComponent {
 
+  showDetails: false;
+
   book$ = this.route.paramMap
     .pipe(
       map(p => p.get('isbn')),
@@ -22,7 +24,8 @@ export class BookDetailsComponent {
           description: error.url,
           rating: 1,
           firstThumbnailUrl: ''
-        }))))
+        })))),
+      share()
     );
 
   constructor(
