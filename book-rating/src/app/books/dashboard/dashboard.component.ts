@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
   constructor(private store: Store<State>) { }
 
   ngOnInit() {
-    this.store.dispatch(new LoadBooks());
+    // this.store.dispatch(new LoadBooks());
   }
 
   // TODO: redux!
