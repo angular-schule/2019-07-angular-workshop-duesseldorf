@@ -20,7 +20,11 @@ export class HigherorderComponent implements OnInit {
 
     /******************************/
 
-    
+    this.result$ = this.source$.pipe(
+
+      // HIER OPERATOR REIN!
+      mergeMap(e => this.es.echo(e, 5))
+    );
 
     /******************************/
 
