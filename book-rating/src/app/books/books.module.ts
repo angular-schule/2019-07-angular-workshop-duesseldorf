@@ -11,6 +11,10 @@ import { StoreModule } from '@ngrx/store';
 import * as fromBook from './reducers/book.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { BookEffects } from './effects/book.effects';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatBottomSheetModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -23,11 +27,15 @@ import { BookEffects } from './effects/book.effects';
     CommonModule,
     BooksRoutingModule,
     ReactiveFormsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatBottomSheetModule,
     StoreModule.forFeature('book', fromBook.reducer),
     EffectsModule.forFeature([BookEffects])
   ],
   exports: [
     DashboardComponent
-  ]
+  ],
+  entryComponents: [CreateBookComponent]
 })
 export class BooksModule { }

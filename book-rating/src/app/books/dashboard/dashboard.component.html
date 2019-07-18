@@ -1,6 +1,6 @@
-<br-create-book
+<!-- <br-create-book
   (createBook)="doCreateBook($event)"
-></br-create-book>
+></br-create-book> -->
 
 <hr>
 
@@ -20,3 +20,7 @@
 </div>
 
 Anzahl der Bücher: {{ (books$ | async).length }}
+
+<button mat-fab class="fab" (click)="showCreateBook()">
+  <mat-icon>add</mat-icon>
+</button>
