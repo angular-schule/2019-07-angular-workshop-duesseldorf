@@ -4,8 +4,12 @@
 
 <hr>
 
+<h3 *ngIf="loading$ | async">
+  Loading...
+</h3>
+
 <div
-  *ngFor="let b of books; odd as o"
+  *ngFor="let b of (books$ | async); odd as o"
   [ngClass]="{ grayBg: !o }">
 
   <br-book
@@ -15,4 +19,4 @@
   ></br-book>
 </div>
 
-Anzahl der Bücher: {{ books.length }}
+Anzahl der Bücher: {{ (books$ | async).length }}
