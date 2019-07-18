@@ -13,7 +13,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { BookEffects } from './effects/book.effects';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatBottomSheetModule } from '@angular/material';
+import { MatBottomSheetModule, MatCardModule } from '@angular/material';
 
 
 @NgModule({
@@ -30,6 +30,7 @@ import { MatBottomSheetModule } from '@angular/material';
     MatButtonModule,
     MatIconModule,
     MatBottomSheetModule,
+    MatCardModule,
     StoreModule.forFeature('book', fromBook.reducer),
     EffectsModule.forFeature([BookEffects])
   ],

@@ -1,20 +1,22 @@
-<div class="card mb-4">
-  <div class="card-body bg-light">
-      <img class="img-thumbnail float-right"
-        [src]="book.firstThumbnailUrl" width="200">
-    <div class="card-title">
-      <h2>
-        {{ book.title }}
-        <ng-container *ngFor="let s of stars">
-          ⭐
-        </ng-container>️
-      </h2>
-    </div>
-    <p>{{ book.description }}</p>
+<mat-card class="mt-4">
+  <mat-card-header>
+    <mat-card-title>{{ book.title }}</mat-card-title>
+    <mat-card-subtitle>
+      <ng-container *ngFor="let s of [].constructor(book.rating)">⭐️</ng-container>
+    </mat-card-subtitle>
+  </mat-card-header>
 
-    <button (click)="doRateDown()" class="btn btn-secondary mr-2">-1</button>
-    <button (click)="doRateUp()" class="btn btn-primary mr-2">+1</button>
-
-    <a class="btn btn-primary" [routerLink]="['/book',  book.isbn]">Details</a>
+  <div class="thumb">
+    <img mat-card-image [src]="book.firstThumbnailUrl" alt="Thumbnail">
   </div>
-</div>
+
+  <mat-card-content>
+    <p>{{ book.description }}</p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button (click)="doRateDown()" mat-raised-button color="primary">-1</button>
+    <button (click)="doRateDown()" mat-raised-button color="primary">+1</button>
+    <a [routerLink]="['/book', book.isbn]" mat-raised-button color="accent">Details</a>
+  </mat-card-actions>
+</mat-card>
